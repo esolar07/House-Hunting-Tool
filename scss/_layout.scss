@@ -1,0 +1,25 @@
+
+header{
+	width:100%;
+	height:15%;
+  	@include background-image(linear-gradient(120deg, #7CFC00, #006400));
+	ul{
+		@include inline-block-list;
+	}	
+}
+
+
+form{
+	@include grid-row(6);
+	.f-box{
+	@include grid-column(4, $center:true);
+	}
+}
+
+
+section{
+	@include grid-row();
+	.others{
+		@include grid-column(6, $center:true);
+	}
+}
