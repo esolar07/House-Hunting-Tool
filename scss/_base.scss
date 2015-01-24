@@ -18,3 +18,7 @@ header{
 li{
 	@include no-bullet;
 }
+
+.button{
+	@include button;
+}
