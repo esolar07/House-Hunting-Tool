@@ -18,15 +18,18 @@
     </header>
 
     <form>
-      <div class="f-box">
+      <div class="f-box" id="drop">
         <h3>How are you feeling today?</h3>
         <input type="text" id="feelUpdate" placeholder="How are you today?">
         <input type="text" id="feeUpdate2" placeholder="Tell us why?">
         <button class="button" id="updateButton">Submit</button>
       </div>
+      <div class="f-box-tab" onclick="toggle('drop');">
+        <h4>How Are You?</h4S>
+      </div>
     </form>
 
-    <section>
+    <section id="mainSection">
       <div class="others">
         <h2>Username</h2>
         <p>Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. At vero eos et accusamus. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
@@ -45,6 +48,17 @@
     <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
     <script>
 
+
+      function toggle(id){
+        var e = document.getElementById(id);
+        if(e.style.display == "none"){
+          e.style.display = "block";
+        }else{
+          e.style.display = "none";
+        }
+      };
+
+
       var feelUpdate = document.getElementById("feelUpdate"),
       feeUpdate2 = document.getElementById("feeUpdate2"),
       updateButton = document.getElementById("updateButton"),
@@ -53,14 +67,19 @@
       // event listener button
       updateButton.addEventListener('click', function(){
         // updates db
-        currentMesgRef.set(feeUpdate2.value);
+        currentMesgRef.push(feeUpdate2.value);
         feeUpdate2.value="";
         console.log("Added to FB-DB");
       });
 
-     // event listener for db chang
+     // event listener for db change
      currentMesgRef.on("value", function(snapshot){
-
+      var div = document.createElement("div");
+      var newDiv = div.classList.add("others");
+      var section = document.getElementById("mainSection");
+      // adds new div with db text
+      section.appenChild("newDiv");
+      newDiv.innerText = snapshot.val();
      })
 
     </script>
