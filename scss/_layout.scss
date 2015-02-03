@@ -1,21 +1,19 @@
 
 header{
-	width:100%;
-	height:15%;
-  	@include background-image(linear-gradient(120deg, #32CD32, #006400));
-	ul{
-		color:whtie;
-		font-size:1.2em;
-		padding:10px;
-		@include inline-block-list;
-	}	
+  	nav{
+  		@include background-image(linear-gradient(120deg, #32CD32, #006400));
+		color:white;
+  	}
 }
 
 
 form{
-	@include grid-row(6);
+	@include grid-row();
 	.f-box{
 	@include grid-column(4, $center:true);
+	@include transition-property(all);
+  	@include transition-duration(.5s);
+  	@include transition-timing-function(ease-in);
 	&-tab{
 		@include grid-column(4, $center:true);
 		text-align: center;
@@ -32,6 +30,13 @@ form{
 section{
 	@include grid-row();
 	.others{
-		@include grid-column(6, $center:true);
+		@include grid-column(8, $center:true);
+		background: #8FBC8F;
+		h1{
+			clear: both;
+		}
+		p{
+			clear: both;
+		}
 	}
 }
