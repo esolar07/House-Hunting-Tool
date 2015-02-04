@@ -14,22 +14,15 @@
         <ul class="title-area">
           <li class="name">
             <h1><a href="#">House Hunting Tool</a></h1>
-          </li>
-           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+         
         </ul>
 
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li class="has-dropdown">
-              <a href="#">Menu</a>
-              <ul class="dropdown">
-                <li><a href="http://miami.craigslist.org/search/apa">Craiglist Housing</a></li>
-                <li><a href="http://www.trulia.com/FL/South_Florida/">Trulia</a></li>
-                <li><a href="http://hotpads.com/FL">Hotpads</a></li>
-              </ul>
-            </li>
+            <li><a href="http://miami.craigslist.org/search/apa" target="_blank">Craiglist Housing</a></li>
+            <li><a href="http://www.trulia.com/FL/South_Florida/" target="_blank">Trulia</a></li>
+            <li><a href="http://hotpads.com/FL" target="_blank">Hotpads</a></li>
           </ul>
 
         </section>
@@ -100,7 +93,11 @@
       updateButton.addEventListener('click', function(){
         // updates db
         currentMesgRef.push({add: address.value, rooms: rooms.value, baths: baths.value, price: price.value});
+        //clears input fields after submitting
         address.value="";
+        rooms.value="";
+        baths.value="";
+        price.value="";
         console.log("Added to FB-DB");
       });
 
@@ -111,7 +108,7 @@
      });
 
      function displayMessage(address, rooms){
-
+      // apends to end of list
       var node = document.createElement("div");
       node.classList.add("others")
       var textnode = document.createTextNode(address);
