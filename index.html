@@ -51,12 +51,6 @@
         </aside>
         <p>Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. At vero eos et accusamus. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
       </div>
-
-      <div class="others">
-        <h2>Username</h2>
-        <p>Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. At vero eos et accusamus. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-      </div>
-
     </section>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -66,7 +60,7 @@
     <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
     <script>
 
-      // toggle function for feeling form
+      // toggle function for  form
       function toggle(id){
         var e = document.getElementById(id);
         // if style is set to display none
@@ -88,33 +82,41 @@
       price = document.getElementById("price"),
       updateButton = document.getElementById("updateButton"),
       myDataRef = new Firebase('https://esolar.firebaseio.com/'),
-      currentMesgRef = myDataRef.child("currentMesg");
-      // event listener button
+      currentListRef = myDataRef.child("currentMesg");
+      
+
+
+      // event listener button for FireBase
       updateButton.addEventListener('click', function(){
         // updates db
-        currentMesgRef.push({add: address.value, rooms: rooms.value, baths: baths.value, price: price.value});
+        currentListRef.push({add: address.value, rooms: rooms.value, baths: baths.value, price: price.value});
+        console.log("Added to FB-DB");
         //clears input fields after submitting
         address.value="";
         rooms.value="";
         baths.value="";
         price.value="";
-        console.log("Added to FB-DB");
       });
 
-     // event listener for db change
-     currentMesgRef.on("child_added", function(snapshot){
-      var message = snapshot.val(); 
-      displayMessage(message.feel, message.reason);    
+     // event listener for FireBase change
+     currentListRef.on("child_added", function(snapshot){
+      var listing = snapshot.val(); 
+      displayListing(listing.address, listing.rooms);    
      });
 
-     function displayMessage(address, rooms){
-      // apends to end of list
-      var node = document.createElement("div");
+     function displayListing(address, rooms){
+
+      var newListing = document.getElementById("mainSection"),
+      textnode = document.createTextNode(address),
+      node = document.createElement("div");
+
+      // appends to div to section
+      newListing.appendChild(node);
+      // adds class of "others" to new divs
       node.classList.add("others")
-      var textnode = document.createTextNode(address);
       node.appendChild(textnode);
-      document.getElementById("mainSection").appendChild(node);
-      console.log("change made on db...");
+      // adds to main section 
+      console.log("change made on ui...");
      }
 
     </script>
