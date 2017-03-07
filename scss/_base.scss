@@ -2,7 +2,9 @@
 html, body {
   box-sizing: border-box;
   width: 100%;
+  background: $page-bg;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
   margin:0;
@@ -10,15 +12,15 @@ html, body {
 }
 
 header{
-	color:white;
+	color:darkred;
 	font-size:1.5em;
 }
 
 
-li{
-	@include no-bullet;
-}
+// li{
+// 	@include no-bullet;
+// }
 
-.button{
-	@include button;
-}
+// .button{
+// 	@include button;
+// }

@@ -1,26 +1,19 @@
 
 header{
   	nav{
-  		@include background-image(linear-gradient(120deg, #32CD32, #006400));
 		color:white;
   	}
 }
 
 
 form{
-	@include grid-row();
 	.f-box{
-	@include grid-column(4, $center:true);
-	@include transition-property(all);
-  	@include transition-duration(.5s);
-  	@include transition-timing-function(ease-in);
+	
 	&-tab{
-		@include grid-column(4, $center:true);
 		text-align: center;
 		background: #008080;
 		padding: 15px;
 		z-index:2;
-		@include box-shadow(black 0 0 5px);
 		//@include border-radius(0px 0px 100% 100%);
 		}
 	}
@@ -28,9 +21,7 @@ form{
 
 
 section{
-	@include grid-row();
 	.others{
-		@include grid-column(8, $center:true);
 		background: #8FBC8F;
 		h1{
 			clear: both;
