@@ -1,33 +1,27 @@
 
-header{
-  	nav{
-		color:white;
-  	}
+
+.l-header{
+	padding-top: 10px;
+	width: 100%;
+	height: 150px;
+	background: $nav-background;
+	@media screen and (min-width:750px){
+    	padding-top: 50px;
+		width:30%;
+		height: 100%;
+  	} 
 }
 
-
-form{
-	.f-box{
-	
-	&-tab{
-		text-align: center;
-		background: #008080;
-		padding: 15px;
-		z-index:2;
-		//@include border-radius(0px 0px 100% 100%);
-		}
-	}
+.l-main-container {
+	padding-top: 20px;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient($body-bg-1, $body-bg-2);
+	@media screen and (min-width:750px){
+    	padding-top: 60px;
+		width:70%;
+		height: 100%;
+		background: linear-gradient(to right, $body-bg-1, $body-bg-2);
+  	} 
 }
 
-
-section{
-	.others{
-		background: #8FBC8F;
-		h1{
-			clear: both;
-		}
-		p{
-			clear: both;
-		}
-	}
-}

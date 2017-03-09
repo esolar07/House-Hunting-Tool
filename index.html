@@ -9,49 +9,54 @@
   </head>
   <body>
     
-    <header>
-      <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="#">House Hunting Tool</a></h1>
-         
-        </ul>
+    <header class="l-header" >
+      <div class="nav-container">
 
-        <section class="top-bar-section">
-          <!-- Right Nav Section -->
-          <ul class="right">
-            <li><a href="http://miami.craigslist.org/search/apa" target="_blank">Craiglist Housing</a></li>
-            <li><a href="http://www.trulia.com/FL/South_Florida/" target="_blank">Trulia</a></li>
-            <li><a href="http://hotpads.com/FL" target="_blank">Hotpads</a></li>
+        <div class="nav-title">
+            <h1><a href="#">House Hunting </a></h1>
+        </div>
+
+        <nav class="nav-bar">
+          <h3>Reference Sites</h3>
+          <!-- Nav Section -->
+          <ul class="navi">
+            <li class="navi__item"><a href="http://miami.craigslist.org/search/apa" target="_blank">Craiglist</a></li>
+            <li class="navi__item"><a href="http://www.trulia.com/FL/South_Florida/" target="_blank">Trulia</a></li>
+            <li class="navi__item"><a href="http://hotpads.com/FL" target="_blank">Hotpads</a></li>
           </ul>
-
-        </section>
-      </nav>
+        </nav>
+      
+      </div>
     </header>
 
-    <form>
-      <div class="f-box" id="drop">
-        <h4>New Listing</h4>
-        <input type="text" id="address" placeholder="Address">
-        <input type="text" id="rooms" placeholder="Rooms">
-        <input type="text" id="baths" placeholder="bathrooms">
-        <input type="text" id="price" placeholder="Price">
-        <button class="button" id="updateButton">Submit</button>
-      </div>
-      <div class="f-box-tab" onclick="toggle('drop');">
-        <h4>Add a possible option</h4S>
-      </div>
-    </form>
+    <main class="l-main-container">
+      <section class="pageSection">
+      <form>
+        <div class="f-box" id="drop">
+          <h4>New Listing</h4>
+          <input type="text" id="address" placeholder="Address">
+          <input type="text" id="rooms" placeholder="Rooms">
+          <input type="text" id="baths" placeholder="bathrooms">
+          <input type="text" id="price" placeholder="Price">
+          <button class="button" id="updateButton">Submit</button>
+        </div>
+        <div class="f-box-tab" onclick="toggle('drop');">
+          <h4>Add a possible option</h4S>
+        </div>
+      </form>
+      </section>
 
-    <section id="mainSection">
-      <div class="others">
-        <h2>Username</h2>
-        <aside>
-          
-        </aside>
-        <p>Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. At vero eos et accusamus. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-      </div>
-    </section>
+      <section id="mainSection" class="page-section">
+        <h1>Possible Options</h1>
+        <div class="page-section__item">
+          <h2>Username</h2>
+          <aside>
+            
+          </aside>
+          <p>Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. At vero eos et accusamus. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+        </div>
+      </section>
+    </main>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
