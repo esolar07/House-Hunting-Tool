@@ -11,11 +11,18 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 // variables
- let address = document.querySelector("#address"),
-      rooms = document.querySelector("#rooms"),
-      baths = document.querySelector("#baths"),
-      price = document.querySelector("#price"),
-      updateButton = document.querySelector("updateButton"),
-      myDataRef = new Firebase('https://esolar.firebaseio.com/'),
-      currentListRef = myDataRef.child("currentMesg");
+var address = document.querySelector("#address"),
+    rooms = document.querySelector("#rooms"),
+    baths = document.querySelector("#baths"),
+    price = document.querySelector("#price"),
+    add = docuument.querySelector('#add-btn'),
+    updateButton = document.querySelector("updateButton"),
+    myDataRef = new Firebase('https://esolar.firebaseio.com/'),
+    currentListRef = myDataRef.child("currentMesg");
 
+// shows add listing form
+var formDrop = () =>{
+    add.addEventListner('click', function(){
+        
+    });
+}

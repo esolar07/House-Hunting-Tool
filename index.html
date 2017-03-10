@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation</title>
+    <title>House Hunting</title>
     <link rel="stylesheet" href="css/app.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
@@ -30,23 +30,26 @@
     </header>
 
     <main class="l-main-container">
-      <section class="pageSection">
-      <form>
-        <div class="f-box" id="drop">
-          <h4>New Listing</h4>
-          <input type="text" id="address" placeholder="Address">
-          <input type="text" id="rooms" placeholder="Rooms">
-          <input type="text" id="baths" placeholder="bathrooms">
-          <input type="text" id="price" placeholder="Price">
-          <button class="button" id="updateButton">Submit</button>
-        </div>
-        <div class="f-box-tab" onclick="toggle('drop');">
-          <h4>Add a possible option</h4S>
-        </div>
-      </form>
-      </section>
+      <section class="l-sub-main-container">
 
-      <section id="mainSection" class="page-section">
+      <div class="form-btn" id="add-btn">
+        <h4>Add a possible option</h4S>
+      </div>
+
+      <div class="page-section page-section--lightbox">
+        <div class="nl-form-container">
+          <form class="nl-form" id="drop">
+            <h4>New Listing</h4>
+            <input class="nl-form__ipt" type="text" id="address" placeholder="Address">
+            <input class="nl-form__ipt" type="text" id="rooms" placeholder="Rooms">
+            <input class="nl-form__ipt" type="text" id="baths" placeholder="bathrooms">
+            <input class="nl-form__ipt" type="text" id="price" placeholder="Price">
+            <button class="nl-form__button" id="updateButton">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="mainSection" class="page-section">
         <h1>Possible Options</h1>
         <div class="page-section__item">
           <h2>Username</h2>
@@ -55,7 +58,7 @@
           </aside>
           <p>Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. At vero eos et accusamus. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
         </div>
-      </section>
+      </div>
     </main>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -65,20 +68,20 @@
     <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
     <script>
 
-      // toggle function for  form
-      function toggle(id){
-        var e = document.getElementById(id);
-        // if style is set to display none
-        if(e.style.display == "none"){
-          //then change to block
-          e.style.display = "block";
-          console.log("modified to display block");
-          // otherwise display none
-        }else{
-          e.style.display = "none";
-          console.log("modified to display none");
-        }
-      };
+      // // toggle function for  form
+      // function toggle(id){
+      //   var e = document.getElementById(id);
+      //   // if style is set to display none
+      //   if(e.style.display == "none"){
+      //     //then change to block
+      //     e.style.display = "block";
+      //     console.log("modified to display block");
+      //     // otherwise display none
+      //   }else{
+      //     e.style.display = "none";
+      //     console.log("modified to display none");
+      //   }
+      // };
 
 
       var address = document.getElementById("address"),
