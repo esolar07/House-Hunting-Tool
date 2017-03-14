@@ -1,3 +1,6 @@
-#drop{
-	display:none;
+
+.is-btn-hovered:hover{
+	cursor: pointer;
+	background: $form-add-btn-hover;
 }
+

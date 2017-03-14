@@ -13,7 +13,7 @@
       <div class="nav-container">
 
         <div class="nav-title">
-            <h1><a href="#">House Hunting </a></h1>
+            <h1><a href="#"> House Hunt </a></h1>
         </div>
 
         <nav class="nav-bar">
@@ -32,21 +32,8 @@
     <main class="l-main-container">
       <section class="l-sub-main-container">
 
-      <div class="form-btn" id="add-btn">
+      <div class="show-form-btn is-btn-hovered" id="display-lightbox">
         <h4>Add a possible option</h4S>
-      </div>
-
-      <div class="page-section page-section--lightbox">
-        <div class="nl-form-container">
-          <form class="nl-form" id="drop">
-            <h4>New Listing</h4>
-            <input class="nl-form__ipt" type="text" id="address" placeholder="Address">
-            <input class="nl-form__ipt" type="text" id="rooms" placeholder="Rooms">
-            <input class="nl-form__ipt" type="text" id="baths" placeholder="bathrooms">
-            <input class="nl-form__ipt" type="text" id="price" placeholder="Price">
-            <button class="nl-form__button" id="updateButton">Submit</button>
-          </form>
-        </div>
       </div>
 
       <div id="mainSection" class="page-section">
@@ -61,10 +48,23 @@
       </div>
     </main>
 
+    <section class="l-section-lightbox" id="lightbox">
+      <div class="nl-form-container">
+        <form class="nl-form" id="drop">
+          <h4 class="nl-form__header">New Listing</h4>
+          <input class="nl-form__ipt" type="text" id="address" placeholder="Address">
+          <input class="nl-form__ipt" type="text" id="rooms" placeholder="Rooms">
+          <input class="nl-form__ipt" type="text" id="baths" placeholder="bathrooms">
+          <input class="nl-form__ipt" type="text" id="price" placeholder="Price">
+          <button class="nl-form__btn" id="updateButton">Submit</button>
+        </form>
+      </div>
+    </section>
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="bower_components/foundation/js/foundation/foundation.top.js"></script>
-    <script src="js/app.js"></script>
+    <!--<script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.top.js"></script>-->
+    <script src="build/app.js"></script>
     <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
     <script>
 
@@ -84,48 +84,48 @@
       // };
 
 
-      var address = document.getElementById("address"),
-      rooms = document.getElementById("rooms"),
-      baths = document.getElementById("baths"),
-      price = document.getElementById("price"),
-      updateButton = document.getElementById("updateButton"),
-      myDataRef = new Firebase('https://esolar.firebaseio.com/'),
-      currentListRef = myDataRef.child("currentMesg");
+    //   var address = document.getElementById("address"),
+    //   rooms = document.getElementById("rooms"),
+    //   baths = document.getElementById("baths"),
+    //   price = document.getElementById("price"),
+    //   updateButton = document.getElementById("updateButton"),
+    //   myDataRef = new Firebase('https://esolar.firebaseio.com/'),
+    //   currentListRef = myDataRef.child("currentMesg");
       
 
 
-      // event listener button for FireBase
-      updateButton.addEventListener('click', function(){
-        // updates db
-        currentListRef.push({add: address.value, rooms: rooms.value, baths: baths.value, price: price.value});
-        console.log("Added to FB-DB");
-        //clears input fields after submitting
-        address.value="";
-        rooms.value="";
-        baths.value="";
-        price.value="";
-      });
+    //   // event listener button for FireBase
+    //   updateButton.addEventListener('click', function(){
+    //     // updates db
+    //     currentListRef.push({add: address.value, rooms: rooms.value, baths: baths.value, price: price.value});
+    //     console.log("Added to FB-DB");
+    //     //clears input fields after submitting
+    //     address.value="";
+    //     rooms.value="";
+    //     baths.value="";
+    //     price.value="";
+    //   });
 
-     // event listener for FireBase change
-     currentListRef.on("child_added", function(snapshot){
-      var listing = snapshot.val(); 
-      displayListing(listing.address, listing.rooms);    
-     });
+    //  // event listener for FireBase change
+    //  currentListRef.on("child_added", function(snapshot){
+    //   var listing = snapshot.val(); 
+    //   displayListing(listing.address, listing.rooms);    
+    //  });
 
-     function displayListing(address, rooms){
+    //  function displayListing(address, rooms){
 
-      var newListing = document.getElementById("mainSection"),
-      textnode = document.createTextNode(address),
-      node = document.createElement("div");
+    //   var newListing = document.getElementById("mainSection"),
+    //   textnode = document.createTextNode(address),
+    //   node = document.createElement("div");
 
-      // appends to div to section
-      newListing.appendChild(node);
-      // adds class of "others" to new divs
-      node.classList.add("others")
-      node.appendChild(textnode);
-      // adds to main section 
-      console.log("change made on ui...");
-     }
+    //   // appends to div to section
+    //   newListing.appendChild(node);
+    //   // adds class of "others" to new divs
+    //   node.classList.add("others")
+    //   node.appendChild(textnode);
+    //   // adds to main section 
+    //   console.log("change made on ui...");
+    //  }
 
     </script>
   </body>

@@ -406,7 +406,7 @@ html, body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  color: white; }
+  color: black; }
 
 body {
   display: -ms-flexbox;
@@ -440,10 +440,10 @@ li {
   list-style-type: none; }
 
 .l-header {
-  padding-top: 10px;
+  padding-top: 0px;
   width: 100%;
   height: 150px;
-  background: #008B8B; }
+  background: #696969; }
   @media screen and (min-width: 750px) {
     .l-header {
       padding-top: 50px;
@@ -454,18 +454,28 @@ li {
   padding-top: 20px;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#008B8B, white); }
+  background: #FFFAFA; }
   @media screen and (min-width: 750px) {
     .l-main-container {
       padding-top: 60px;
       width: 70%;
-      height: 100%;
-      background: linear-gradient(to right, #008B8B, white); } }
+      height: 100%; } }
 
 .l-sub-main-container {
   margin-right: auto;
   margin-left: auto;
   width: 90%; }
+
+.l-section-lightbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  transform: scale(0);
+  border-radius: 50%; }
 
 .nav-container {
   margin-right: auto;
@@ -477,10 +487,16 @@ li {
     .nav-container {
       width: 80%; } }
 
+.nav-title h1 a {
+  color: #FF6347;
+  font-weight: bolder; }
+
 .nav-bar {
   width: 100%; }
   @media screen and (min-width: 750px) {
     .nav-bar {
+      margin-right: auto;
+      margin-left: auto;
       width: 80%; } }
 
 .navi {
@@ -492,25 +508,68 @@ li {
   justify-content: center;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 20px;
   width: 80%; }
   @media screen and (min-width: 750px) {
     .navi {
       -ms-flex-direction: column;
-      flex-direction: column; } }
+      flex-direction: column;
+      margin-top: 20px; } }
   .navi__item {
-    margin: 10px; }
+    margin: 10px;
+    padding: 10px 5px; }
+
+.nl-form-container {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 999; }
+
+.nl-form {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  width: 300px;
+  height: 350px;
+  background: #696969;
+  z-index: 999; }
+  .nl-form__header {
+    text-align: center; }
+  .nl-form__ipt {
+    margin: 10px auto;
+    width: 250px;
+    height: 25px; }
+  .nl-form__btn {
+    margin: 10px auto;
+    width: 200px;
+    height: 35px; }
+
+.show-form-btn {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px 4px;
+  width: 200px;
+  text-align: center;
+  background: #3CB371;
+  border-radius: 5px;
+  will-change: background, cursor;
+  transition: 1s all; }
 
 .others {
   margin: 10px;
   padding: 15px;
   z-index: 3; }
 
-.page-section--lightbox {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 999; }
-
-#drop {
-  display: none; }
+.is-btn-hovered:hover {
+  cursor: pointer;
+  background: #2E8B57; }
