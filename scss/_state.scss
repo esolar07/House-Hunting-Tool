@@ -4,3 +4,24 @@
 	background: $form-add-btn-hover;
 }
 
+
+.is-form-remove-btn:hover{
+	color: $form-remove-color-hover;
+	background: $form-remove-btn-hover;
+	cursor: pointer;
+	animation: removeBtnHover 3s linear;
+}
+
+
+
+@keyframes removeBtnHover{
+	0%{
+		border: solid 0px red;
+	}
+	50%{
+		border: solid 15px green;
+	}
+	100%{
+		border: solid 0px red;
+	}
+}

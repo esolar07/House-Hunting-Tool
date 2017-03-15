@@ -63,35 +63,57 @@
 	margin-left: auto;
 	padding-top: 20px;
 	width: 300px;
-	height: 350px;
+	height: 450px;
 	background:$form-bg;
 	z-index: 999;
+	&__remove{
+		margin-left: 250px;
+		height: 35px;
+		width: 35px;
+		text-align: center;
+		line-height: 35px;
+		font-weight: bolder;
+		color: $form-remove-color;
+		background: $form-remove-btn;
+		border-radius: 50%;
+		will-change: background, color;
+	}
 	&__header{
+		margin-top: 30px;
 		text-align:center;
+		font-size: 20px;
 	}
 	&__ipt{
 		margin: 10px auto;
 		width: 250px;
 		height: 25px;
-	}
-	&__btn{
-		margin: 10px auto;
-		width: 200px;
-		height: 35px;
+		border: 0;
+		outline: 0;
+		border-bottom:1px solid black;
+		background:transparent;
 	}
 }
 
-.show-form-btn{
-	margin-right: auto;
-	margin-left: auto;
-	padding: 15px 4px;
+
+.btn{
 	width: 200px;
-	text-align:center;
 	background: $form-add-btn;
 	border-radius: 5px;
 	will-change: background, cursor;
 	transition: 1s all;
+	&--submit{
+		margin: 10px auto;
+		height: 35px;
+		border: 0px;
+	}
+	&--show-form{
+		margin-right: auto;
+		margin-left: auto;
+		padding: 15px 4px;
+		text-align:center;
+	}
 }
+
 
 .others{
 	margin:10px;

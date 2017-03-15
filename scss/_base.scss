@@ -41,3 +41,12 @@ li {
   list-style-image: none;
   list-style-type: none;
 }
+
+fieldset{
+  border: none;
+}
+
+input[type=submit]{
+  border:none;
+  font-size:1em;
+}
